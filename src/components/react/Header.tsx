@@ -60,7 +60,9 @@ const Header = () => {
 			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500
 				${scrolled ? "py-2" : "py-4"} px-4 sm:px-6 md:px-8 lg:px-16`}
 			style={{
-				background: `radial-gradient(circle at ${hoverEffect.x}% ${hoverEffect.y}%, rgba(255, 255, 255, 0.3), rgba(10, 10, 10, ${scrolled ? '0.95' : '0.85'}) 30%)`,
+				background: hoverEffect.active 
+					? `radial-gradient(circle at ${hoverEffect.x}% ${hoverEffect.y}%, rgba(0, 140, 255, 0.15), rgba(10, 10, 10, ${scrolled ? '0.95' : '0.85'}) 30%)`
+					: `rgba(10, 10, 10, ${scrolled ? '0.95' : '0.85'})`,
 				backdropFilter: 'blur(10px)',
 				boxShadow: scrolled ? '0 10px 30px -10px rgba(2, 6, 23, 0.5)' : 'none'
 			}}
@@ -68,7 +70,7 @@ const Header = () => {
 			<div className="max-w-7xl mx-auto">
 				{/* Animated navigation line */}
 				<div className="absolute h-0.5 bottom-0 left-0 right-0">
-					<div className="h-full bg-gradient-to-r from-[#01012E] via-purple-600 to-[#101727] bg-size-200 animate-gradient-x" />
+					<div className="h-full bg-gradient-to-r from-[#01012E]/0 via-[#008cff] to-[#101727]/0 bg-size-200 animate-gradient-x" />
 				</div>
 				
 				<div className="flex justify-between items-center relative">
@@ -76,7 +78,7 @@ const Header = () => {
 					<div className="flex items-center group">
 						<a href="#" className="flex items-center space-x-3 relative overflow-hidden">
 							<div className="relative">
-								<img src="./white.png" alt="Tall Giardini Logo" className="rounded-full w-10 h-10 sm:w-12 sm:h-12 border-none z-10 relative transition-transform duration-500 " />
+								<img src="./logo.png" alt="Tall Giardini Logo" className="rounded-full w-10 h-10 sm:w-12 sm:h-12 border-none z-10 relative transition-transform duration-500 " />
 							</div>
 							<div className="overflow-hidden">
 								<span className="text-white font-bold text-lg sm:text-xl block relative">
