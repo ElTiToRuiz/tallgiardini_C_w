@@ -34,7 +34,7 @@ const Header = () => {
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 	
-	const handleMouseMove = (e: MouseEvent<HTMLElement>) => {
+	const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
 		if (!headerRef.current) return;
 		const rect = headerRef.current.getBoundingClientRect();
 		setHoverEffect({
@@ -76,11 +76,11 @@ const Header = () => {
 					<div className="flex items-center group">
 						<a href="#" className="flex items-center space-x-3 relative overflow-hidden">
 							<div className="relative">
-								<img src="./logo.png" alt="Tall Giardini Logo" className="rounded-full w-10 h-10 sm:w-12 sm:h-12 border-none z-10 relative transition-transform duration-500 " />
+								<img src="./white.png" alt="Tall Giardini Logo" className="rounded-full w-10 h-10 sm:w-12 sm:h-12 border-none z-10 relative transition-transform duration-500 " />
 							</div>
 							<div className="overflow-hidden">
 								<span className="text-white font-bold text-lg sm:text-xl block relative">
-									TallGiardini
+									Tall Giardini
 								</span>
 							</div>
 						</a>
@@ -88,16 +88,15 @@ const Header = () => {
 
 					{/* Mobile Menu Button */}
 					<button 
-						className="relative w-10 h-10 flex items-center justify-center rounded-full bg-gray-800/50 text-gray-300 hover:text-white overflow-hidden md:hidden"
+						className="relative w-10 h-10 flex items-center justify-center rounded-full  text-gray-300 hover:text-white overflow-hidden lg:hidden"
 						onClick={() => setIsMenuOpen(!isMenuOpen)}
 						aria-label="Toggle menu"
 					>
-						<span className="absolute inset-0 bg-gradient-to-tr from-blue-800/20 to-purple-800/20 opacity-0 hover:opacity-100 transition-opacity"></span>
 						{isMenuOpen ? <X size={20} /> : <Menu size={20} />}
 					</button>
 
 					{/* Desktop Navigation */}
-					<nav className="hidden md:flex items-center space-x-1">
+					<nav className="hidden lg:flex items-center space-x-1">
 						{[
 							{ href: "#services", label: "Servicios", hasDropdown: true },
 							{ href: "#exito", label: "Modelo de Éxito", hasDropdown: false },
@@ -148,7 +147,7 @@ const Header = () => {
 					{/* Call to Action Button - Desktop only */}
 					<a
 						href="#contact"
-						className="hidden md:flex items-center px-6 py-2.5 relative overflow-hidden group rounded-full transition-all duration-300"
+						className="hidden lg:flex items-center px-6 py-2.5 relative overflow-hidden group rounded-full transition-all duration-300"
 					>
 						<span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-500"></span>
 						<span className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-20">
@@ -169,7 +168,7 @@ const Header = () => {
 				{/* Mobile Menu */}
 				{isMenuOpen && (
 					<div 
-						className="fixed inset-0 z-[100] bg-gray-900/80 md:hidden" 
+						className="fixed inset-0 bg-[#0a0a0afa] h-screen w-screen block lg:hidden backdrop-blur-3xl z-50" 
 						onClick={closeMenu}
 						style={{
 							backdropFilter: 'blur(12px)',
@@ -179,7 +178,7 @@ const Header = () => {
 						<div className="flex flex-col h-full" onClick={(e) => e.stopPropagation()}>
 							<div className="flex justify-end p-6">
 								<button 
-									className="text-gray-300 hover:text-white"
+									className="text-gray-300 hover:text-white absolute top-5 right-8 rounded-full p-2 transition-colors duration-300"
 									onClick={closeMenu}
 									aria-label="Close menu"
 								>

@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
 			<div className="relative z-10 max-w-5xl mx-auto text-center">
 				{/* Animated badge */}
 				<div 
-					className={`inline-block mb-6 px-4 py-1.5 rounded-full bg-blue-900/30 border border-blue-700/30 transition-all duration-700 ${isLoaded ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-4'}`}
+					className={`inline-block my-6 px-4 py-2 rounded-full bg-blue-900/30 border border-blue-700/30 transition-all duration-700 ${isLoaded ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-4'}`}
 				>
 					<span className="text-blue-300 text-sm font-medium flex items-center">
 						<span className="inline-block w-2 h-2 rounded-full bg-blue-400 mr-2 animate-ping"></span>
