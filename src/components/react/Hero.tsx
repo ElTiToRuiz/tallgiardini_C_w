@@ -17,7 +17,6 @@ const Hero: React.FC = () => {
 		<section 
 			ref={sectionRef}
 			className="relative flex flex-col items-center justify-center min-h-screen py-20 px-4 md:px-16 lg:px-24 overflow-hidden"
-			style={{ backgroundColor: "#0a0a0a" }}
 		>
 			<BackgroundHero/>
 
