@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, MoveRight } from "lucide-react";
-import { BackgroundHero } from "./hero/BackgroundHero";
+import { MoveRight } from "lucide-react";
+import { BackgroundHero } from "./BackgroundHero";
 
 const Hero: React.FC = () => {
 	const [isLoaded, setIsLoaded] = useState(false);
@@ -24,9 +24,9 @@ const Hero: React.FC = () => {
 			<div className="relative z-10 max-w-5xl mx-auto text-center">
 				{/* Animated badge */}
 				<div 
-					className={`inline-block my-6 px-4 py-2 rounded-full bg-blue-900/30 border border-blue-700/30 transition-all duration-700 ${isLoaded ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-4'}`}
+					className={`inline-block my-6 px-4 py-2 rounded-full transition-all duration-700 ${isLoaded ? 'opacity-100 transform-none' : 'opacity-0 -translate-y-4'}`}
 				>
-					<span className="text-blue-300 text-sm font-medium flex items-center">
+					<span className="text-blue-300 text-sm font-medium flex items-center border border-gray-700 px-3 py-1 rounded-full">
 						<span className="inline-block w-2 h-2 rounded-full bg-blue-400 mr-2 animate-ping"></span>
 						Revoluciona tu estrategia digital
 					</span>
@@ -37,15 +37,15 @@ const Hero: React.FC = () => {
 					{/* First line */}
 					<div className="overflow-hidden">
 						<span className={`inline-block transition-transform duration-700 delay-300 ${isLoaded ? 'transform-none' : 'translate-y-full'}`}>
-							Logra un Crecimiento Exponencial
+							Crecimiento exponencial
 						</span>
 					</div>
 
 					{/* Second line */}
 					<div className="overflow-hidden mt-2">
 						<span className={`inline-block transition-transform duration-700 delay-500 ${isLoaded ? 'transform-none' : 'translate-y-full'}`}>
-							<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 animate-gradient-x">
-								con Embudos de Venta Efectivos
+							<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 animate-gradient-x">
+								con embudos de venta
 							</span>
 						</span>
 					</div>
@@ -55,8 +55,8 @@ const Hero: React.FC = () => {
 				<div className={`h-px w-0 mx-auto mt-8 bg-gradient-to-r from-transparent via-blue-500 to-transparent transition-all duration-1000 ease-out ${isLoaded ? 'w-48 md:w-64' : ''}`}></div>
 
 				{/* Description with fade in */}
-				<p className={`text-gray-300 text-lg sm:text-xl md:text-2xl max-w-2xl mx-auto mt-8 leading-relaxed transition-all duration-700 delay-700 ${isLoaded ? 'opacity-100 transform-none' : 'opacity-0 translate-y-4'}`}>
-					Ayudamos a empresas, marcas personales e influencers a alcanzar nuevas alturas.
+				<p className={`text-[#d9d9d9] text-lg sm:text-xl md:text-2xl max-w-2xl mx-auto mt-8 leading-relaxed transition-all duration-700 delay-700 ${isLoaded ? 'opacity-100 transform-none' : 'opacity-0 translate-y-4'}`}>
+					Ayudamos a Arquitectos o diseñadores de interior a escalar sus negocios con estrategias personalizadas
 				</p>
 
 				{/* Animated CTA button */}
@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
 						className="group relative inline-flex items-center px-8 py-4 overflow-hidden rounded-full text-white text-lg font-medium"
 					>
 						{/* Button background layers */}
-						<span className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 animate-gradient-x bg-size-200"></span>
+						<span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 animate-gradient-x bg-size-200"></span>
 						
 						{/* Hover reveal layer */}
 						<span className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 bg-white/10"></span>
@@ -94,6 +94,10 @@ const Hero: React.FC = () => {
 					</a>
 				</div>
 			</div>
+      <div className='bg-[#2563eb]/60 w-[240px] h-[250px] absolute top-0 right-0 -translate-x-1/2 blur-[160px] z-[0]'/>
+      <div className='bg-[#2563eb]/50 w-[240px] h-[250px] absolute top-0 left-0 -translate-x-1/2 blur-[160px] z-[0]'/>
+      <div className='bg-white w-[50px] h-[50px] absolute top-0 left-0 -translate-x-1/2 blur-[160px] z-[0]'/>
+
 		</section>
 	);
 };

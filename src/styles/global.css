@@ -7,15 +7,152 @@
 *,
 ::after,
 ::before {
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  cursor: url('/cursor.svg'), auto;
+}
+
+body::selection {
+  background-color: #2563eb;
 }
 
 .tunnelSection-title1 {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important;
 }
 
 .tunnelSection-title1.char {
-    transform: translateY(115px) !important;
-    transition: transform 0.5s;
+  transform: translateY(115px) !important;
+  transition: transform 0.5s;
+}
+
+.left-top-border {
+  border-left: 2px solid transparent;
+  border-image: linear-gradient(to top, #222b, transparent) 0 100;
+}
+
+.left-bottom-border {
+  border-left: 2px solid transparent;
+  border-image: linear-gradient(to bottom, #222b, transparent) 0 100;
+}
+
+.right-top-border {
+  border-right: 2px solid transparent;
+  border-image: linear-gradient(to top, #222b, transparent) 0 100;
+}
+
+.right-bottom-border {
+  border-right: 2px solid transparent;
+  border-image: linear-gradient(to bottom, #222b, transparent) 0 100;
+}
+
+.start-bottom-border {
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(to top, #222b, transparent) 0 100;
+}
+
+@media (orientation: landscape) {
+  .scroll-animation {
+  animation: reveal linear forwards;
+  animation-timeline: view(block);
+  animation-range: 90vh 100vh;
+}
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 1;
+    filter: blur(0px);
+    scale: 1;
+  }
+  100% {
+    opacity: .5;
+    filter: blur(5px);
+    scale: 1.05;
+  }
+}
+
+.glow-trapezoid {
+  width: 78px;
+  height: 48px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+      to bottom,
+      #ffffff10 0%,
+      #ffffff30 100%
+    ),
+    
+      repeating-linear-gradient(
+        0deg,
+        #ffffff12 0px,
+        #ffffff14 1px,
+        #ffffff16 2px
+      );
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  backdrop-filter: blur(20px);
+}
+
+.trapezoid {
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+@keyframes flicker {
+  0% { opacity: 0.7; }
+  50% { opacity: 0.2; }
+  100% { opacity: 0.7; }
+}
+
+.animate-flicker {
+  animation-name: flicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.animate-fade-in {
+  animation: fade-in 3s ease-in alternate infinite;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: .6;
+    filter: blur(30px);
+  }
+}
+
+.text-shadow {
+  text-shadow: 0 0px 2.6px white;
+}
+
+.dark-gradient {
+  background: linear-gradient(to bottom, #1d1d1d, #141414);
+}
+
+.underline-transition {
+  background:
+    linear-gradient(
+      to right,
+      #9333ea,
+      #9333ea
+    ),
+    linear-gradient(
+      to right,
+      #2563eb,
+      #2563eb
+  );
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.underline-transition:hover {
+  background-size: 0 3px, 100% 3px;
 }

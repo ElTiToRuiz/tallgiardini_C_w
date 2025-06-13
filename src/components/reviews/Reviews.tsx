@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-import { Navigation, Pagination } from 'swiper/modules'
+import { Navigation  } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { GoArrowLeft, GoArrowRight, GoStarFill } from "react-icons/go";
 
@@ -11,56 +11,73 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import SplitType from 'split-type'
 import gsap from 'gsap'
+import { FaXTwitter } from 'react-icons/fa6'
 
 
 const reviews = [
   {
-    name: 'Jeannie Grant',
+    name: 'Jeannie Grant - CEO',
     date: 'June 01, 2023',
     img: './person.jpg',
     text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora culpa quis odio nisi, labore officiis ullam voluptas fuga, placeat sunt rem, consequatur nobis.',
+    href: '#',
+    icon: <FaXTwitter />
   },
   {
-    name: 'Jeannie Grant',
+    name: 'Jeannie Grant - CEO',
     date: 'June 01, 2023',
     img: './person.jpg',
     text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora culpa quis odio nisi, labore officiis ullam voluptas fuga, placeat sunt rem, consequatur nobis.',
+    href: '#',
+    icon: <FaXTwitter />
   },
   {
-    name: 'Jeannie Grant',
+    name: 'Jeannie Grant - CEO',
     date: 'June 01, 2023',
     img: './person.jpg',
     text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora culpa quis odio nisi, labore officiis ullam voluptas fuga, placeat sunt rem, consequatur nobis.',
+    href: '#',
+    icon: <FaXTwitter />
   },
   {
-    name: 'Jeannie Grant',
+    name: 'Jeannie Grant - CEO',
     date: 'June 01, 2023',
     img: './person.jpg',
     text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora culpa quis odio nisi, labore officiis ullam voluptas fuga, placeat sunt rem, consequatur nobis.',
+    href: '#',
+    icon: <FaXTwitter />
   },
   {
-    name: 'Jeannie Grant',
+    name: 'Jeannie Grant - CEO',
     date: 'June 01, 2023',
     img: './person.jpg',
     text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora culpa quis odio nisi, labore officiis ullam voluptas fuga, placeat sunt rem, consequatur nobis.',
+    href: '#',
+    icon: <FaXTwitter />
   },
   {
-    name: 'Jeannie Grant',
+    name: 'Jeannie Grant - CEO',
     date: 'June 01, 2023',
     img: './person.jpg',
     text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora culpa quis odio nisi, labore officiis ullam voluptas fuga, placeat sunt rem, consequatur nobis.',
+    href: '#',
+    icon: <FaXTwitter />
   },
   {
-    name: 'Jeannie Grant',
+    name: 'Jeannie Grant - CEO',
     date: 'June 01, 2023',
     img: './person.jpg',
     text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora culpa quis odio nisi, labore officiis ullam voluptas fuga, placeat sunt rem, consequatur nobis.',
+    href: '#',
+    icon: <FaXTwitter />
   },
   {
-    name: 'Jeannie Grant',
+    name: 'Jeannie Grant - CEO',
     date: 'June 01, 2023',
     img: './person.jpg',
     text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora culpa quis odio nisi, labore officiis ullam voluptas fuga, placeat sunt rem, consequatur nobis.',
+    href: '#',
+    icon: <FaXTwitter />
   },
 ]
 
@@ -156,10 +173,9 @@ const Reviews = () => {
 
   return (
     <div className="w-full p-10 overflow-hidden">
-      <div className='pb-20 md:p-10 xl:p-24'>
-        <h3 className='text-lg'>Confiado por <span className='text-purple-600 font-bold'>1200+</span> compañías</h3>
-        <h1 ref={title1} className='pb-10 text-4xl w-[100%] py-3 font-bold md:text-7xl xl:w-[60%] md:text-[#ffffff]'>No confíe de nuestra palabra, vea lo que dicen nuestros clientes</h1>
-        <p className='text-white/80 md:w-[60%] text-xl text-[#a1a1a1]'>Nos enorgullece trabajar con empresas de todos los tamaños, desde startups hasta corporaciones reconocidas. Nuestro compromiso con la calidad y la atención al cliente ha generado relaciones duraderas. <span className='pt-3 pb-10 block text-white font-medium'>Descubre cómo hemos ayudado a otros a alcanzar sus metas.</span>
+      <div className='pb-8 md:p-10 xl:px-24 xl:py-14'>
+        <h1 ref={title1} className='pb-10 text-4xl w-[100%] py-3 font-bold md:text-7xl xl:w-[60%] md:text-[#ffffff]'>No confíes solo en nuestra palabra, conocé cómo ayudamos a otros estudios a crecer</h1>
+        <p className='text-white/80 md:w-[60%] text-xl text-[#a1a1a1]'>Nos enorgullece trabajar con estudios de arquitectura y diseño de interiores de todos los tamaños. Nuestro compromiso con la calidad y la atención al cliente ha generado relaciones duraderas. <span className='pt-3 pb-10 block text-white font-medium'>Descubre cómo hemos ayudado a otros a alcanzar sus metas.</span>
         </p>
       </div>
       {navigationReady && (
@@ -177,22 +193,24 @@ const Reviews = () => {
           >
             {reviews.map((review, index) => (
               <SwiperSlide key={index}>
-                <div className='p-5 gap-3 w-full flex flex-col justify-start bg-[#0C0B0E] border-[#151518] border-[1.5px] rounded-xl'>
-                  <div className='flex justify-center items-center gap-2 w-min'>
+                <div className='p-5 gap-3 w-full flex flex-col justify-start bg-gradient-to-tr from-transparent to-[#1c1c1c] rounded-xl text-gray-600 hover:text-[#f8f8f8] transition-colors duration-500 border border-[#ffffff18]'>
+                  <div className='flex items-center justify-between'>
+                    <img className='w-[50px] h-[50px] rounded-full' src={review.img} alt={review.name} />
+                    <a href={review.href} className='text-2xl'>
+                      {review.icon}
+                    </a>
+                  </div>
+                  <div className='flex justify-center items-center gap-0.5 w-min'>
                     {Array(5).fill(0).map((_, i) => (
-                      <div key={i} className='h-6 w-6 bg-green-400 flex justify-center items-center'>
+                      <div key={i} className='h-6 w-6 flex justify-center items-center text-white'>
                         <GoStarFill />
                       </div>
                     ))}
                   </div>
-                  <p className='w-[100%]'>{review.text}</p>
-                  <div className='flex items-center gap-3'>
-                    <img className='w-[50px] h-[50px] rounded-full' src={review.img} alt={review.name} />
-                    <div>
-                      <p className='font-bold'>{review.name}</p>
-                      <p className='-mt-2 text-white/80'>{review.date}</p>
-                    </div>
-                  </div>
+                  <blockquote className='w-[100%] text-gray-200/80 text-[15px] text-pretty'>"{`${review.text}`}"</blockquote>
+                  <div className="my-3 h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent w-48"></div>
+                    <p className='font-bold text-sm md:text-base'>{review.name}</p>
+                    <time className='-mt-2 text-white/80 text-sm'>{review.date}</time>
                 </div>
               </SwiperSlide>))}
 

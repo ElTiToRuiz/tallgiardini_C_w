@@ -15,7 +15,7 @@ export const BackgroundHero = () => {
         const intensity = Math.max(0, 1 - distance /  300);
   
         (tile as HTMLElement).style.cssText = `
-          box-shadow: 0 0 ${25 * intensity}px rgba(0, 140, 255, ${intensity});
+          box-shadow: 0 0 ${25 * intensity}px rgba(37, 99, 235, ${intensity});
           opacity: ${0.9 + intensity * 0.4};
           transition: box-shadow 0.2s all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
         `;
