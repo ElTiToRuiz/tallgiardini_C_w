@@ -108,18 +108,19 @@ const TailoredSolutions = () => {
   return (
     <section 
       ref={containerRef}
-      className="my-8 md:my-[54px] md:grid md:grid-cols-2 max-w-7xl mx-auto relative"
+      className="py-20 md:grid md:grid-cols-2 max-w-6xl mx-auto relative " 
     >
-      <div className="max-md:mb-12 md:sticky md:top-[46px] pt-[30px] md:self-start z-10">
-          <h1 className="max-md:text-center text-3xl md:text-4xl font-bold px-8 animate-[pulse_4500ms_linear_infinite]">
-            Diseñamos sistemas digitales a medida <span className="text-white/40">que convierten tráfico en
-            ventas.</span>
-          </h1>
+      <div className="max-md:mb-12 md:sticky md:top-[10%] pt-[30px] md:self-start z-10">
+        <h2 className="text-2xl md:text-4xl text-white font-bold my-2 text-center">Nuestra solución</h2>
+        <div className="h-[1px] bg-gray-300 w-full opacity-30 my-10"></div>
+        <h1 className="text-center text-gray-200 text-2xl md:text-3xl font-semibold px-8 animate-[pulse_4500ms_linear_infinite]">
+          Diseñamos sistemas digitales a medida que convierten tráfico en
+          ventas
+        </h1>
       </div>
 
       <div className="space-y-10 pt-[30px] px-8 z-10 md:border-l md:border-gray-300 md:border-opacity-30">
-        <h2 className="text-2xl md:text-3xl font-semibold">Nuestra solución</h2>
-        <div className="h-[1px] bg-gray-300 w-full opacity-30"></div>
+        
 
         {data.map((item, index) => (
           <div key={index} className="bg-[linear-gradient(to_bottom_right,#2563eb19_5%,#0D0D0D_20%,#0D0D0D_80%,#9333ea19_95%)] p-10 rounded-xl border border-[#ffffff18] scroll-animation">

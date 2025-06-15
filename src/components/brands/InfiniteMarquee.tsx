@@ -5,8 +5,8 @@ const InfiniteMarqueeComponent = () => {
   const logosWrapper = useRef<HTMLDivElement | null>(null);
 
   return (
-    <div className='py-20 flex flex-col items-center w-[100vw] overflow-x-hidden'>
-      <h2 className="p-5 text-4xl pb-20 text-center text-white w-full lg:w-[50%]">Trabajamos con marcas que usan las <span className='underline-transition'>mejores herramientas</span> del mercado</h2>
+    <div className='pb-20 flex flex-col items-center w-[100vw] overflow-x-hidden max-w-6xl mx-auto relative'>
+      <h2 className="p-5 text-5xl pb-20 text-center text-white w-full lg:w-[80%]">Trabajamos con marcas que usan las <span className='underline-transition'>mejores herramientas</span> del mercado</h2>
       <div>
         <div className="relative h-min" ref={logosWrapper}>
           <div

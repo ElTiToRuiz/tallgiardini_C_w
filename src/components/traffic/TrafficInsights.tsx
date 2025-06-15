@@ -58,7 +58,7 @@ const FadeUpItem: React.FC<FadeUpItemProps> = ({
 
 const TrafficInsights = () => {
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 mt-4 relative overflow-hidden bg-[#0c0c0c]">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 mt-4 relative overflow-hidden max-w-6xl mx-auto">
       <FadeUpItem delay={50}>
       <h1 className="text-center text-5xl mt-6 font-bold text-shadow">
         Tráfico Sin Conversión

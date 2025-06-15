@@ -60,10 +60,10 @@ const Hero: React.FC = () => {
 				</p>
 
 				{/* Animated CTA button */}
-				<div className={`mt-10 transition-all duration-700 delay-1000 ${isLoaded ? 'opacity-100 transform-none' : 'opacity-0 translate-y-8'}`}>
+				<div className={`mt-14 transition-all duration-700 delay-1000 ${isLoaded ? 'opacity-100 transform-none' : 'opacity-0 translate-y-8'}`}>
 					<a
 						href="#get-started"
-						className="group relative inline-flex items-center px-8 py-4 overflow-hidden rounded-full text-white text-lg font-medium"
+						className="group relative inline-flex items-center px-8 py-4 overflow-hidden rounded-full text-white text-lg font-medium hover:-translate-y-1"
 					>
 						{/* Button background layers */}
 						<span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 animate-gradient-x bg-size-200"></span>
@@ -89,7 +89,6 @@ const Hero: React.FC = () => {
 						{/* Button content with animated arrow */}
 						<span className="relative flex items-center">
 							<span>Comienza Ahora</span>
-							<MoveRight className="w-5 h-5 ml-2 transform translate-x-0 group-hover:translate-x-1 transition-transform" />
 						</span>
 					</a>
 				</div>

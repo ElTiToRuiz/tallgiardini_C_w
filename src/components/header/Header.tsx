@@ -71,7 +71,7 @@ const Header = () => {
         boxShadow: scrolled ? "0 10px 30px -10px rgba(2, 6, 23, 0.5)" : "none",
       }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Animated navigation line */}
         <div className="absolute h-0.5 bottom-0 left-0 right-0">
           <div className="h-full bg-gradient-to-r from-[#01012E]/0 via-[#008cff] to-[#101727]/0 bg-size-200 animate-gradient-x" />
