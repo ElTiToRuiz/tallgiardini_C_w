@@ -29,7 +29,7 @@ const glowEffects = {
   premium: glow ? "shadow-xl shadow-rose-500/25" : ""
 };
 
-const baseClasses = "inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full border backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-xl";
+const baseClasses = "inline-flex items-center gap-2 px-4 py-2 mb-4 text-sm font-medium rounded-full border backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-xl";
 const variantClass = variants[variant];
 const glowClass = glowEffects[variant];
 const finalClasses = `${baseClasses} ${variantClass} ${glowClass} ${className}`.trim();
