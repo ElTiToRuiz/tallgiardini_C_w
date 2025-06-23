@@ -1,0 +1,51 @@
+---
+export interface Props {
+  variant?: 'default' | 'accent' | 'success' | 'warning' | 'premium';
+  icon?: string;
+  class?: string;
+  glow?: boolean;
+}
+
+const { 
+  variant = 'default', 
+  icon = "M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z", 
+  class: className = '',
+  glow = false
+} = Astro.props;
+
+const variants = {
+  default: "bg-black/90 text-white/90 border-white/10",
+  accent: "bg-black/90 text-rose-400 border-rose-500/20",
+  success: "bg-black/90 text-emerald-400 border-emerald-500/20",
+  warning: "bg-black/90 text-amber-400 border-amber-500/20",
+  premium: "bg-gradient-to-r from-black/95 to-gray-900/95 text-rose-300 border-rose-400/30"
+};
+
+const glowEffects = {
+  default: glow ? "shadow-lg shadow-white/10" : "",
+  accent: glow ? "shadow-lg shadow-rose-500/20" : "",
+  success: glow ? "shadow-lg shadow-emerald-500/20" : "",
+  warning: glow ? "shadow-lg shadow-amber-500/20" : "",
+  premium: glow ? "shadow-xl shadow-rose-500/25" : ""
+};
+
+const baseClasses = "inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full border backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-xl";
+const variantClass = variants[variant];
+const glowClass = glowEffects[variant];
+const finalClasses = `${baseClasses} ${variantClass} ${glowClass} ${className}`.trim();
+---
+
+<div class={finalClasses}>
+  <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+    <path d={icon}></path>
+  </svg>
+  <span class="whitespace-nowrap">
+    <slot />
+  </span>
+</div>
+
+<style>
+  div:hover {
+    transform: translateY(-1px);
+  }
+</style>

@@ -1,0 +1,134 @@
+---
+import Badge from "../ui/Badge.astro"; 
+const faqs = [
+  {
+    question: "¿Cuánto tiempo toma ver resultados tangibles?",
+    answer:
+      "Los primeros indicadores de progreso suelen verse entre 30-60 días. Sin embargo, el crecimiento sostenible y significativo, como un ROI robusto, generalmente se materializa a partir de los 3-6 meses de implementación estratégica y optimización continua.",
+  },
+  {
+    question: "¿Qué incluye exactamente su servicio de agencia premium?",
+    answer:
+      "Nuestro servicio integral abarca: análisis profundo de negocio y mercado, diseño de estrategia digital personalizada, creación de embudos de conversión de alta eficiencia, implementación de sistemas de seguimiento avanzados, optimización data-driven constante, y reportes mensuales detallados con KPIs claros y accionables.",
+  },
+  {
+    question: "¿Tienen experiencia con empresas de mi industria específica?",
+    answer:
+      "Hemos colaborado exitosamente con más de 25 industrias diversas, desde e-commerce de lujo y servicios B2B/B2C, hasta tecnología SaaS y salud. Nuestro enfoque metodológico basado en datos nos permite adaptarnos y crear estrategias efectivas para cualquier sector.",
+  },
+  {
+    question: "¿Cuál es la inversión mínima para acceder a sus servicios?",
+    answer:
+      "La inversión se personaliza según el alcance del proyecto y tus objetivos de crecimiento. Ofrecemos paquetes premium que inician desde $2,000 USD mensuales. En nuestra consulta estratégica gratuita, evaluamos tu situación y recomendamos la opción óptima para tu presupuesto y ambiciones.",
+  },
+  {
+    question: "¿Cómo miden el éxito y el ROI de las campañas?",
+    answer:
+      "Medimos el éxito a través de KPIs específicos alineados con tus objetivos: tasa de conversión, costo por adquisición (CPA), valor de vida del cliente (LTV), Retorno de la Inversión Publicitaria (ROAS), y métricas personalizadas. Proveemos dashboards en tiempo real y reportes mensuales transparentes.",
+  },
+  {
+    question: "¿Ofrecen algún tipo de garantía en los resultados?",
+    answer:
+      "Si bien la naturaleza del marketing digital impide garantizar resultados específicos (ninguna agencia ética puede hacerlo), sí garantizamos total transparencia, trabajo diligente basado en mejores prácticas probadas, y una dedicación absoluta para ajustar y optimizar estrategias hasta alcanzar los objetivos de tu negocio.",
+  },
+];
+---
+
+<section id="faq" class="relative overflow-hidden py-16 md:py-24">
+
+    <!-- Background Effects -->
+  <div class="absolute inset-0 pointer-events-none">
+    <!-- Animated Gradient Orbs - Tema Azul/Índigo -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-indigo-500/25 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-blue-500/20 rounded-full blur-3xl animate-float-delayed"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+    
+    
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-12 md:mb-16">
+      <Badge 
+  
+        icon="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+      >
+        Preguntas Frecuentes
+      </Badge>
+
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extralight text-white leading-tight tracking-tight mb-4 md:mb-6">
+        Resolvemos tus{" "}
+        <span class="font-medium bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          Dudas Clave
+        </span>
+      </h2>
+
+      <p class="text-base sm:text-lg md:text-xl text-gray-300 max-w-md sm:max-w-lg md:max-w-3xl mx-auto leading-relaxed font-light">
+        Encuentra respuestas a las preguntas más comunes sobre nuestros servicios premium y cómo podemos transformar
+        tu negocio.
+      </p>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="max-w-3xl mx-auto">
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <div class="border-b border-neutral-800/70 last:border-b-0 transition-all duration-300 rounded-lg overflow-hidden hover:bg-neutral-900/20 faq-item">
+            <button class="text-left text-white hover:text-blue-300 px-4 py-4 sm:px-6 sm:py-5 text-sm sm:text-lg font-medium hover:no-underline transition-colors group w-full flex justify-between items-center faq-trigger">
+              <span class="group-hover:text-blue-400 transition-colors font-light">{faq.question}</span>
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-400 transition-all duration-300 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+              <div class="text-gray-400 leading-relaxed px-4 pb-4 sm:px-6 sm:pb-6 text-xs sm:text-base font-light">
+                {faq.answer}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // FAQ Accordion functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+      const trigger = item.querySelector('.faq-trigger');
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('.faq-icon');
+      
+      trigger?.addEventListener('click', () => {
+        const isOpen = content?.style.maxHeight && content.style.maxHeight !== '0px';
+        
+        // Close all other items
+        faqItems.forEach(otherItem => {
+          const otherContent = otherItem.querySelector('.faq-content');
+          const otherIcon = otherItem.querySelector('.faq-icon');
+          if (otherItem !== item) {
+            if (otherContent) otherContent.style.maxHeight = '0px';
+            if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+            otherItem.classList.remove('bg-neutral-900/30');
+          }
+        });
+        
+        // Toggle current item
+        if (isOpen) {
+          if (content) content.style.maxHeight = '0px';
+          if (icon) icon.style.transform = 'rotate(0deg)';
+          item.classList.remove('bg-neutral-900/30');
+        } else {
+          if (content) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+          }
+          if (icon) icon.style.transform = 'rotate(180deg)';
+          item.classList.add('bg-neutral-900/30');
+        }
+      });
+    });
+  });
+</script>

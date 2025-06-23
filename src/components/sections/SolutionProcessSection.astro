@@ -1,0 +1,258 @@
+---
+import Badge from '../ui/Badge.astro';
+import { goCalendar } from '../../utils/navigation.ts';
+
+const processSteps = [
+  {
+    number: "01",
+    title: "Diagnóstico Estratégico",
+    description: "Analizamos a fondo tu marca, mercado y audiencia para diseñar estrategias personalizadas que aborden tus metas específicas y desafíos únicos.",
+    icon: "M9 5H7a2 2 0 00-2 2v6a2 2 0 002 2h2m0 0h2a2 2 0 002-2V7a2 2 0 00-2-2H9m0 0V3m0 2h2m-2 0v2m0 0h2m-2 0v2",
+    gradient: "from-blue-500/20 to-cyan-500/20",
+    borderColor: "border-blue-500/30 group-hover:border-blue-400/70",
+    iconColor: "text-blue-400 group-hover:text-blue-300",
+    duration: "1-2 semanas"
+  },
+  {
+    number: "02",
+    title: "Desarrollo Basado en Datos",
+    description: "Construimos embudos de conversión y sistemas digitales respaldados por analytics y pruebas A/B. Cada decisión se fundamenta en datos, no en suposiciones.",
+    icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+    gradient: "from-green-500/20 to-emerald-500/20",
+    borderColor: "border-green-500/30 group-hover:border-green-400/70",
+    iconColor: "text-green-400 group-hover:text-green-300",
+    duration: "2-4 semanas"
+  },
+  {
+    number: "03",
+    title: "Implementación y Optimización Continua",
+    description: "Implementamos soluciones robustas que convierten tráfico en ventas recurrentes, con transparencia total, reportes claros y optimización constante para el crecimiento.",
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+    gradient: "from-purple-500/20 to-pink-500/20",
+    borderColor: "border-purple-500/30 group-hover:border-purple-400/70",
+    iconColor: "text-purple-400 group-hover:text-purple-300",
+    duration: "Continuo"
+  },
+];
+
+const benefits = [
+  { icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z", text: "Resultados en 30 días" },
+  { icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z", text: "Garantía de satisfacción" },
+  { icon: "M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z", text: "Soporte 24/7" },
+  { icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z", text: "Equipo dedicado" }
+];
+---
+
+<section id="process" class="relative overflow-hidden py-20 md:py-32">
+  <!-- Background Effects -->
+  <div class="absolute inset-0 pointer-events-none">
+    <!-- Animated Gradient Orbs - Tema Azul/Verde -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/15 to-cyan-500/25 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-full blur-3xl animate-float-delayed"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-cyan-500/10 to-blue-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
+    
+    <!-- Additional floating elements -->
+    <div class="absolute top-1/3 right-1/5 w-64 h-64 bg-gradient-to-r from-teal-500/10 to-cyan-500/15 rounded-full blur-2xl animate-float-slow"></div>
+    <div class="absolute bottom-1/3 left-1/5 w-48 h-48 bg-gradient-to-r from-blue-400/15 to-green-400/20 rounded-full blur-2xl animate-bounce-slow"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+    <!-- Header -->
+    <div class="text-center mb-16 md:mb-24 animate-fade-in-up">
+      <Badge 
+        icon="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+      >
+        Proceso Simplificado
+      </Badge>
+
+      <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight text-white leading-tight tracking-tight mb-6 md:mb-8 animate-fade-in-up animation-delay-200">
+        Nuestro Proceso <span class="bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 bg-clip-text text-transparent font-medium animate-gradient-x">Probado y Eficaz</span>
+      </h2>
+
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light animate-fade-in-up animation-delay-400">
+        Simplificamos el marketing digital complejo, guiándote a través de nuestro proceso <span class="text-white font-medium">transparente de tres pasos</span> hacia el éxito.
+      </p>
+    </div>
+
+    <!-- Benefits Bar -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16 md:mb-24 animate-fade-in-up animation-delay-600">
+      {benefits.map((benefit, index) => (
+        <div class="bg-neutral-900/40 border border-neutral-800/50 backdrop-blur-sm rounded-xl p-4 text-center hover:border-blue-500/30 transition-all duration-300 group" style={`animation-delay: ${0.8 + index * 0.1}s`}>
+          <div class="w-10 h-10 bg-gradient-to-br from-blue-500/20 to-green-500/20 rounded-lg mx-auto mb-3 flex items-center justify-center border border-blue-500/30 group-hover:border-blue-400/50 transition-all duration-300">
+            <svg class="w-5 h-5 text-blue-400 group-hover:text-blue-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={benefit.icon}></path>
+            </svg>
+          </div>
+          <p class="text-sm text-gray-300 font-medium">{benefit.text}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Process Steps -->
+    <div class="mb-20 md:mb-32 animate-fade-in-up animation-delay-800">
+      <div class="text-center mb-12 md:mb-16">
+        <h3 class="text-3xl sm:text-4xl md:text-5xl font-light text-white leading-tight mb-4">
+          <span class="text-blue-400">3 Pasos</span> Hacia el Éxito
+        </h3>
+        <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+          Un proceso probado que ha transformado más de 500 negocios digitales
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 md:gap-10 relative">
+        
+        {processSteps.map((step, index) => (
+          <div class={`bg-neutral-900/60 border border-neutral-800/70 backdrop-blur-sm hover:border-opacity-100 transition-all duration-500 group rounded-3xl p-4 md:p-6 hover:-translate-y-2 shadow-lg hover:shadow-2xl relative z-10 animate-fade-in-up`} style={`animation-delay: ${1.0 + index * 0.2}s; border-color: ${step.borderColor.split(' ')[0].replace('border-', '')}`}>
+            
+            <!-- Step number badge -->
+            <div class="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-neutral-800 to-neutral-900 border-2 border-neutral-700 rounded-full flex items-center justify-center shadow-lg">
+              <span class="text-lg font-bold text-white">{step.number}</span>
+            </div>
+
+            <!-- Duration badge -->
+            <div class="absolute -top-3 -left-3 px-3 py-1 bg-gradient-to-r from-black/80 to-neutral-900/80 border border-neutral-700/50 rounded-full text-xs text-gray-400 backdrop-blur-sm">
+              {step.duration}
+            </div>
+
+            <div class={`mb-6 inline-flex items-center justify-center p-4 rounded-2xl bg-gradient-to-br ${step.gradient} border ${step.borderColor} transition-all duration-300`}>
+              <svg class={`w-8 h-8 ${step.iconColor} transition-colors duration-300`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={step.icon}></path>
+              </svg>
+            </div>
+
+            <h4 class="text-xl sm:text-2xl md:text-3xl font-medium text-white leading-tight mb-4 group-hover:text-blue-400 transition-colors duration-300">
+              {step.title}
+            </h4>
+            <p class="text-base sm:text-lg text-gray-400 leading-relaxed font-light group-hover:text-gray-300 transition-colors duration-300">
+              {step.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes gradient-x {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+      transform: translateY(-20px) rotate(180deg); 
+    }
+  }
+
+  @keyframes float-delayed {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+      transform: translateY(-30px) rotate(-180deg); 
+    }
+  }
+
+  @keyframes float-slow {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+      transform: translateY(-15px) rotate(90deg); 
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { 
+      opacity: 0.1; 
+      transform: scale(1);
+    }
+    50% { 
+      opacity: 0.25; 
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 3s ease infinite;
+  }
+
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float-delayed 10s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 12s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 6s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 4s ease-in-out infinite;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+    opacity: 0;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+    opacity: 0;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+    opacity: 0;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 0.8s;
+    opacity: 0;
+  }
+
+  .animation-delay-1200 {
+    animation-delay: 1.2s;
+    opacity: 0;
+  }
+</style>

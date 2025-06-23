@@ -1,0 +1,330 @@
+---
+import Badge from '../ui/Badge.astro';
+
+const problems = [
+  {
+    title: "Alto Rebote de Visitantes",
+    description: "Los visitantes llegan pero abandonan rápidamente sin interactuar con tu contenido o productos clave.",
+    icon: "M13 17h8m0 0V9m0 8l-8-8-4 4-6-6",
+    gradient: "from-red-500/20 to-rose-500/20",
+    borderColor: "border-red-500/30 group-hover:border-red-400/70",
+    iconColor: "text-red-400 group-hover:text-red-300",
+    stat: "85%"
+  },
+  {
+    title: "Bajo Tiempo en Página",
+    description: "Los usuarios no encuentran contenido relevante o atractivo que los motive a explorar más a fondo.",
+    icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
+    gradient: "from-orange-500/20 to-amber-500/20",
+    borderColor: "border-orange-500/30 group-hover:border-orange-400/70",
+    iconColor: "text-orange-400 group-hover:text-orange-300",
+    stat: "< 30s"
+  },
+  {
+    title: "Tasa de Conversión Mínima",
+    description: "El tráfico generado no se traduce eficazmente en leads, ventas o las acciones deseadas.",
+    icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z",
+    gradient: "from-yellow-500/20 to-orange-500/20",
+    borderColor: "border-yellow-500/30 group-hover:border-yellow-400/70",
+    iconColor: "text-yellow-400 group-hover:text-yellow-300",
+    stat: "< 2%"
+  },
+  {
+    title: "Propuesta de Valor Confusa",
+    description: "Los visitantes no comprenden claramente tu oferta o los siguientes pasos lógicos a seguir.",
+    icon: "M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+    gradient: "from-purple-500/20 to-pink-500/20",
+    borderColor: "border-purple-500/30 group-hover:border-purple-400/70",
+    iconColor: "text-purple-400 group-hover:text-purple-300",
+    stat: "70%"
+  },
+  {
+    title: "Experiencia de Usuario Frustrante",
+    description: "El sitio web es difícil de navegar, lento en cargar o no es intuitivo para los usuarios móviles.",
+    icon: "M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7",
+    gradient: "from-indigo-500/20 to-blue-500/20",
+    borderColor: "border-indigo-500/30 group-hover:border-indigo-400/70",
+    iconColor: "text-indigo-400 group-hover:text-indigo-300",
+    stat: "3.2s"
+  },
+  {
+    title: "Mensaje Poco Convincente",
+    description: "La comunicación de tu marca y propuesta de valor no resuena con tu audiencia objetivo.",
+    icon: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z",
+    gradient: "from-rose-500/20 to-red-500/20",
+    borderColor: "border-rose-500/30 group-hover:border-rose-400/70",
+    iconColor: "text-rose-400 group-hover:text-rose-300",
+    stat: "60%"
+  },
+];
+
+const impactStats = [
+  { number: "73%", label: "Sitios con Alto Rebote", icon: "M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" },
+  { number: "2.1%", label: "Conversión Promedio", icon: "M9 12l2 2 4-4" },
+  { number: "53%", label: "Abandonan si es Lento", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
+  { number: "88%", label: "No Regresan Después", icon: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" }
+];
+---
+
+<section class="relative overflow-hidden py-20 md:py-32">
+  <!-- Background Effects -->
+  <div class="absolute inset-0 pointer-events-none">
+    <!-- Animated Gradient Orbs - Tema Rojo/Naranja -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-red-500/15 to-orange-500/25 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-rose-500/20 to-pink-500/20 rounded-full blur-3xl animate-float-delayed"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-orange-500/10 to-red-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
+    
+    <!-- Additional floating elements -->
+    <div class="absolute top-1/3 right-1/5 w-64 h-64 bg-gradient-to-r from-amber-500/10 to-orange-500/15 rounded-full blur-2xl animate-float-slow"></div>
+    <div class="absolute bottom-1/3 left-1/5 w-48 h-48 bg-gradient-to-r from-red-400/15 to-rose-400/20 rounded-full blur-2xl animate-bounce-slow"></div>
+    
+
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+    <!-- Header -->
+    <div class="text-center mb-16 md:mb-24 animate-fade-in-up">
+      <Badge 
+        icon="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"
+      >
+        Problemas de Tráfico
+      </Badge>
+
+      <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight text-white leading-tight tracking-tight mb-6 md:mb-8 animate-fade-in-up animation-delay-200">
+        ¿Tráfico que No <span class="bg-gradient-to-r from-red-400 via-orange-400 to-amber-400 bg-clip-text text-transparent font-medium animate-gradient-x">Convierte</span>?
+      </h2>
+
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light animate-fade-in-up animation-delay-400">
+        Identifica las razones críticas por las que tu valioso tráfico no se traduce en <span class="text-white font-medium">ventas reales</span> y cómo podemos solucionarlo.
+      </p>
+    </div>
+
+    <!-- Impact Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-20 md:mb-32 animate-fade-in-up animation-delay-600">
+      {impactStats.map((stat, index) => (
+        <div class="bg-neutral-900/60 border border-neutral-800/70 backdrop-blur-sm rounded-2xl p-6 text-center hover:border-red-500/30 hover:bg-neutral-800/60 transition-all duration-300 group hover:scale-105 hover:-translate-y-1" style={`animation-delay: ${0.8 + index * 0.1}s`}>
+          <div class="w-12 h-12 bg-gradient-to-br from-red-500/20 to-orange-500/20 rounded-xl mx-auto mb-4 flex items-center justify-center border border-red-500/30 group-hover:border-red-400/50 transition-all duration-300">
+            <svg class="w-6 h-6 text-red-400 group-hover:text-red-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={stat.icon}></path>
+            </svg>
+          </div>
+          <div class="text-3xl md:text-4xl font-light text-white mb-2 group-hover:text-red-400 transition-colors duration-300">
+            {stat.number}
+          </div>
+          <div class="text-sm text-gray-400 uppercase tracking-wider font-medium">
+            {stat.label}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Problems Grid -->
+    <div class="mb-20 md:mb-32 animate-fade-in-up animation-delay-800">
+      <div class="text-center mb-12 md:mb-16">
+        <h3 class="text-3xl sm:text-4xl md:text-5xl font-light text-white leading-tight mb-4">
+          Los <span class="text-red-400">6 Obstáculos</span> Más Comunes
+        </h3>
+        <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+          Estos problemas están saboteando silenciosamente tu crecimiento digital
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        {problems.map((problem, index) => (
+          <div class={`bg-neutral-900/60 border border-neutral-800/70 backdrop-blur-sm hover:border-opacity-100 transition-all duration-500 group rounded-3xl p-4 md:p-6 hover:-translate-y-1 shadow-lg hover:shadow-2xl animate-fade-in-up`} style={`animation-delay: ${1.0 + index * 0.1}s; border-color: ${problem.borderColor.split(' ')[0].replace('border-', '')}`}>
+            <div class="flex items-start justify-between mb-2">
+              <div class={`inline-flex items-center justify-center p-4 rounded-2xl bg-gradient-to-br ${problem.gradient} border ${problem.borderColor} transition-all duration-300`}>
+                <svg class={`w-8 h-8 ${problem.iconColor} transition-colors duration-300`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={problem.icon}></path>
+                </svg>
+              </div>
+              <div class={`text-2xl font-bold ${problem.iconColor} opacity-60`}>
+                {problem.stat}
+              </div>
+            </div>
+            
+            <h4 class="text-xl sm:text-2xl md:text-3xl font-medium text-white leading-tight mb-4 group-hover:text-red-400 transition-colors duration-300">
+              {problem.title}
+            </h4>
+            <p class="text-base sm:text-lg text-gray-400 leading-relaxed font-light group-hover:text-gray-300 transition-colors duration-300">
+              {problem.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center animate-fade-in-up animation-delay-1200">
+      <div class="max-w-4xl mx-auto mb-8 md:mb-12">
+        <h3 class="text-3xl sm:text-4xl md:text-5xl font-light text-white leading-tight mb-6 md:mb-8">
+          ¿Te Identificas con Estos{" "}
+          <span class="bg-gradient-to-r from-red-400 via-orange-400 to-amber-400 bg-clip-text text-transparent font-medium animate-gradient-x">
+            Obstáculos?
+          </span>
+        </h3>
+        <p class="text-lg sm:text-xl text-gray-300 leading-relaxed font-light mb-8 md:mb-10">
+          No estás solo. <span class="text-white font-medium">El 87% de las empresas</span> enfrentan estos desafíos. La buena noticia es que tienen solución comprobada.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a
+          href="/solutions"
+          class="inline-flex items-center bg-gradient-to-r from-red-500 to-orange-500 text-white hover:from-red-600 hover:to-orange-600 px-8 py-4 text-base font-medium rounded-full shadow-lg hover:shadow-red-500/25 transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+        >
+          <svg class="mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+          Descubrir Soluciones
+        </a>
+        <a
+          href="/audit"
+          class="inline-flex items-center bg-transparent text-white border-2 border-white/20 hover:border-red-400/50 hover:bg-red-500/10 px-8 py-4 text-base font-medium rounded-full transition-all duration-300 hover:scale-105"
+        >
+          Auditoría Gratuita
+        </a>
+      </div>
+
+      <!-- Trust indicator -->
+      <div class="mt-12 md:mt-16 p-6 bg-neutral-900/40 border border-neutral-800/50 rounded-2xl backdrop-blur-sm max-w-2xl mx-auto">
+        <div class="flex items-center justify-center mb-4">
+          <div class="flex -space-x-2">
+            {[...Array(5)].map((_, i) => (
+              <div class="w-10 h-10 bg-gradient-to-br from-red-500 to-orange-500 rounded-full border-2 border-black flex items-center justify-center text-white text-sm font-bold">
+                {String.fromCharCode(65 + i)}
+              </div>
+            ))}
+          </div>
+        </div>
+        <p class="text-gray-400 text-sm">
+          <span class="text-white font-medium">+200 empresas</span> ya han solucionado estos problemas con nuestro método
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes gradient-x {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+      transform: translateY(-20px) rotate(180deg); 
+    }
+  }
+
+  @keyframes float-delayed {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+      transform: translateY(-30px) rotate(-180deg); 
+    }
+  }
+
+  @keyframes float-slow {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+      transform: translateY(-15px) rotate(90deg); 
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { 
+      opacity: 0.1; 
+      transform: scale(1);
+    }
+    50% { 
+      opacity: 0.25; 
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 3s ease infinite;
+  }
+
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float-delayed 10s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 12s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 6s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 4s ease-in-out infinite;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+    opacity: 0;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+    opacity: 0;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+    opacity: 0;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 0.8s;
+    opacity: 0;
+  }
+
+  .animation-delay-1200 {
+    animation-delay: 1.2s;
+    opacity: 0;
+  }
+</style>

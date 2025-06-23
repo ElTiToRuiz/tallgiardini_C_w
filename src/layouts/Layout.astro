@@ -1,0 +1,75 @@
+---
+import "@styles/global.css";
+interface Props {
+  title: string
+}
+const { title } = Astro.props
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Metadatos esenciales -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Título dinámico -->
+    <title>{title}</title>
+
+    <!-- SEO básico -->
+    <meta name="description" content="Ayudamos a estudios de arquitectura y diseño de interiores a escalar sus negocios con embudos de venta personalizados y sistemas digitales que convierten tráfico en ventas." />
+    <meta name="keywords" content="embudos de venta, diseño estratégico, arquitectura, diseño de interiores, marketing digital, automatización, conversión, tráfico web, crecimiento de negocios, branding, web para arquitectos, funnel, UX/UI, estudios creativos" />
+    <meta name="author" content="TallGiardini" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://tallgiardini.com/" />
+
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tallgiardini.com/" />
+    <meta property="og:title" content="Revoluciona tu estrategia digital | TallGiardini" />
+    <meta property="og:description" content="Escala tu estudio creativo con sistemas digitales a medida. Desde la estrategia hasta la ejecución: todo orientado a conversión." />
+    <meta property="og:image" content="https://tallgiardini.com/og-image.jpg" />
+    <meta property="og:site_name" content="TallGiardini" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Revoluciona tu estrategia digital | TallGiardini" />
+    <meta name="twitter:description" content="Diseñamos sistemas digitales que convierten tráfico en ventas para estudios de arquitectura e interiorismo." />
+    <meta name="twitter:image" content="https://tallgiardini.com/og-image.jpg" />
+    <meta name="twitter:site" content="@tallgiardini" />
+    <meta name="twitter:creator" content="@tallgiardini" />
+
+    <!-- Schema.org / Structured Data JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "TallGiardini",
+        "url": "https://tallgiardini.com",
+        "logo": "https://tallgiardini.com/logo.svg",
+        "sameAs": [
+          "https://www.instagram.com/tallgiardini",
+          "https://twitter.com/tallgiardini",
+          "https://www.linkedin.com/company/tallgiardini"
+        ],
+        "description": "Ayudamos a arquitectos y diseñadores de interiores a escalar sus negocios con estrategias digitales personalizadas y embudos de venta efectivos.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "support@tallgiardini.com",
+          "contactType": "customer support",
+          "areaServed": "ES",
+          "availableLanguage": "Spanish"
+        }
+      }
+    </script>
+    
+    <!-- Montserrat Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body class="font-montserrat  bg-gradient-to-b from-black via-black to-[#0A0A0A] text-white relative">
+    <slot />
+  </body>
+</html>
