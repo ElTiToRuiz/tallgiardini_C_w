@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.tallgiardini.site/sitemap.xml
+Sitemap: https://www.tallgiardini.site/sitemap-index.xml
