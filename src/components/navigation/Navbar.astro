@@ -8,7 +8,7 @@ const navLinks = [
 ];
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/90 backdrop-blur-xl border-b border-neutral-800/50">
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent backdrop-blur-2xl border-neutral-800/90">
   <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 md:h-20">
       <!-- Logo -->
@@ -33,7 +33,7 @@ const navLinks = [
       </div>
 
       <!-- Desktop CTA -->
-      <div class="hidden lg:block">
+      <div class="lg:flex items-center hidden">
         <a
           href="https://calendly.com/morealtamiranda/call-morena-altamiranda"
           rel="noopener noreferrer"
@@ -47,124 +47,20 @@ const navLinks = [
         </a>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <button
-        id="mobile-menu-button"
-        class="lg:hidden p-2 rounded-full bg-neutral-800/50 backdrop-blur-sm border border-neutral-700/50 hover:bg-neutral-700/50 transition-colors"
-      >
-        <svg id="menu-icon" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-        <svg id="close-icon" class="w-6 h-6 text-white hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-    </div>
-  </div>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="fixed inset-0 z-40 lg:hidden hidden">
-    <!-- Backdrop -->
-    <div class="absolute inset-0 bg-black/90 backdrop-blur-xl"></div>
-
-    <!-- Menu Content -->
-    <div class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-gradient-to-br from-neutral-900 to-neutral-800 border-l border-neutral-700/50 transform translate-x-full transition-transform duration-300" id="mobile-menu-panel">
-      <div class="flex flex-col h-full">
-        <!-- Header -->
-        <div class="flex items-center justify-between p-6 border-b border-neutral-700/50">
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 bg-transparent rounded-full flex items-center justify-center">
-              <img src="/logo.webp" alt="Tallgiardini Logo" class="w-8 h-8" /> 
-            </div>
-            <span class="text-white font-semibold">Tall Giardini</span>
-          </div>
-        </div>
-
-        <!-- Navigation Links -->
-        <div class="flex-1 px-6 py-8">
-          <nav class="space-y-2">
-            {navLinks.map((link) => (
-              <a
-                href={link.href}
-                class="flex items-center justify-between p-4 rounded-xl hover:bg-neutral-800/50 transition-colors group mobile-menu-link"
-              >
-                <span class="text-white font-medium text-lg">{link.name}</span>
-                <svg class="w-5 h-5 text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </a>
-            ))}
-          </nav>
-        </div>
-
-        <!-- Mobile CTA -->
-        <div class="p-6 border-t border-neutral-700/50">
-          <a
-            href="https://calendly.com/morealtamiranda/call-morena-altamiranda"
-            rel="noopener noreferrer"
-            target="_blank"
-            class="w-full inline-flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:opacity-90 px-6 py-4 font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 mobile-menu-link"
-          >
-            <svg class="mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-            </svg>
-            Agendar Consulta Gratuita
-          </a>
-          <p class="text-gray-400 text-sm text-center mt-4">
-            Transformamos tu negocio digital
-          </p>
-        </div>
+      <!-- Mobile CTA -->
+      <div class="flex lg:hidden items-center">
+        <a
+          href="https://calendly.com/morealtamiranda/call-morena-altamiranda"
+          rel="noopener noreferrer"
+          target="_blank"
+          class="inline-flex items-center bg-white text-black hover:bg-gray-200 hover:-translate-y-[1px] hover:shadow-white/30 px-3 py-1 font-medium rounded-full hover:shadow-lg transition-all duration-300"
+        >
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+        </a>
       </div>
     </div>
   </div>
 </nav>
-
-<script>
-  // Mobile menu functionality
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileMenuPanel = document.getElementById('mobile-menu-panel');
-  const menuIcon = document.getElementById('menu-icon');
-  const closeIcon = document.getElementById('close-icon');
-  const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-
-  let isMenuOpen = false;
-
-  function toggleMenu() {
-    isMenuOpen = !isMenuOpen;
-    
-    if (isMenuOpen) {
-      mobileMenu?.classList.remove('hidden');
-      setTimeout(() => {
-        mobileMenuPanel?.classList.remove('translate-x-full');
-      }, 10);
-      menuIcon?.classList.add('hidden');
-      closeIcon?.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    } else {
-      mobileMenuPanel?.classList.add('translate-x-full');
-      setTimeout(() => {
-        mobileMenu?.classList.add('hidden');
-      }, 300);
-      menuIcon?.classList.remove('hidden');
-      closeIcon?.classList.add('hidden');
-      document.body.style.overflow = '';
-    }
-  }
-
-  mobileMenuButton?.addEventListener('click', toggleMenu);
-
-  // Close menu when clicking backdrop
-  mobileMenu?.addEventListener('click', (e) => {
-    if (e.target === mobileMenu) {
-      toggleMenu();
-    }
-  });
-
-  // Close menu when clicking links
-  mobileMenuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      toggleMenu();
-    });
-  });
-</script>

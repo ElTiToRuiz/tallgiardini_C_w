@@ -8,50 +8,54 @@ const stats = [
 ];
 ---
 
-<section class="relative min-h-screen overflow-hidden flex items-center">
-  <!-- Animated Gradient Orbs -->
-  <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-purple-500/20 rounded-full blur-3xl animate-float"></div>
-  <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-green-500/20 to-cyan-500/20 rounded-full blur-3xl animate-float-delayed"></div>
-  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-pink-500/15 to-orange-500/15 rounded-full blur-3xl animate-pulse-slow"></div>
+<section class="relative min-h-screen overflow-hidden flex items-center w-full">
+  <!-- Animated Gradient Orbs - Mobile First -->
+  <div class="absolute top-1/4 left-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-gradient-to-r from-blue-500/10 to-purple-500/20 rounded-full blur-3xl animate-float"></div>
+  <div class="absolute bottom-1/4 right-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-gradient-to-r from-green-500/20 to-cyan-500/20 rounded-full blur-3xl animate-float-delayed"></div>
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 sm:w-48 sm:h-48 lg:w-72 lg:h-72 bg-gradient-to-r from-pink-500/15 to-orange-500/15 rounded-full blur-3xl animate-pulse-slow"></div>
     
-  <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-24 md:py-32 z-[1] relative">
-    <div class="text-center py-12 md:py-16">
-      <PremiumBadge 
-        glow={false}
-        icon="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-      >
-        Soluciones Digitales Premium
-      </PremiumBadge>
+  <div class="w-full md:max-w-2xl lg:max-w-6xl mx-auto px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-32 z-[1] relative">
+    <div class="text-center">
+      <!-- Premium Badge -->
+      <div class="my-6 sm:my-8 animate-fade-in-up">
+        <PremiumBadge 
+          glow={false}
+          icon="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+        >
+          Soluciones Digitales Premium
+        </PremiumBadge>
+      </div>
 
-      <!-- Main Title -->
-      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-thin text-white leading-none tracking-tight my-4 md:my-10 animate-fade-in-up animation-delay-200">
+      <!-- Main Title - Mobile First Typography -->
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-thin text-white leading-tight sm:leading-none tracking-tight mb-4 sm:mb-6 md:mb-8 lg:mb-10 animate-fade-in-up animation-delay-200">
         Impulsa tu Crecimiento
         <br />
         <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-green-400 bg-clip-text text-transparent font-medium animate-gradient-x">Digital Premium</span>
       </h1>
 
-      <!-- Subtitle -->
-      <p class="text-base sm:text-lg md:text-xl text-gray-300 max-w-md sm:max-w-lg md:max-w-2xl mx-auto leading-relaxed font-light mb-8 md:mb-10 animate-fade-in-up animation-delay-400">
+      <!-- Subtitle - Mobile First -->
+      <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl mx-auto leading-relaxed font-light mb-6 sm:mb-8 md:mb-10 animate-fade-in-up animation-delay-400 px-2 sm:px-0">
         Transformamos empresas con estrategias digitales innovadoras que generan resultados reales y crecimiento sostenible.
       </p>
 
-      <!-- CTA Button -->
-      <div class="mb-10 md:mb-12 animate-fade-in-up animation-delay-600">
+      <!-- CTA Button - Mobile First -->
+      <div class="mb-8 sm:mb-10 md:mb-12 animate-fade-in-up animation-delay-600">
         <a
           href="https://calendly.com/morealtamiranda/call-morena-altamiranda"
           rel="noopener noreferrer"
           target="_blank" 
-          class="inline-flex items-center bg-gradient-to-r from-white to-gray-100 text-black hover:from-gray-100 hover:to-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-medium rounded-full shadow-2xl hover:shadow-white/20 transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+          class="inline-flex items-center bg-gradient-to-r from-white to-gray-100 text-black hover:from-gray-100 hover:to-white px-5 py-3 sm:px-6 sm:py-3 md:px-8 md:py-4 text-sm sm:text-base font-medium rounded-full shadow-2xl hover:shadow-white/20 transition-all duration-300 hover:scale-105 hover:-translate-y-1"
         >
           <svg class="mr-2 h-4 w-4 sm:h-5 sm:w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
           </svg>
-          Agendar Consulta Gratuita
+          <span class="hidden xs:inline">Agendar Consulta Gratuita</span>
+          <span class="xs:hidden">Consulta Gratuita</span>
         </a>
       </div>
 
-      <!-- Rating -->
-      <div class="flex flex-col items-center mb-12 md:mb-16 animate-fade-in-up animation-delay-800">
+      <!-- Rating - Mobile First -->
+      <div class="flex flex-col items-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 animate-fade-in-up animation-delay-800">
         <div class="flex items-center mb-2">
           {[...Array(5)].map((_, i) => (
             <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400 animate-twinkle" style={`animation-delay: ${i * 0.1}s`} viewBox="0 0 24 24">
@@ -60,18 +64,18 @@ const stats = [
           ))}
           <span class="ml-2 text-white font-medium text-sm sm:text-base">5.0</span>
         </div>
-        <p class="text-sm sm:text-base text-gray-400 font-light">100+ clientes confían en nosotros</p>
+        <p class="text-xs sm:text-sm md:text-base text-gray-400 font-light">100+ clientes confían en nosotros</p>
       </div>
 
-      <!-- Stats Grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6 animate-fade-in-up animation-delay-1000">
+      <!-- Stats Grid - Mobile First Responsive -->
+      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 animate-fade-in-up animation-delay-1000 max-w-4xl mx-auto">
         {stats.map((stat, index) => (
-          <div class="bg-neutral-900/50 border border-neutral-800/70 backdrop-blur-sm rounded-xl shadow-lg hover:border-blue-500/30 hover:bg-neutral-800/60 transition-all duration-300 group hover:scale-105 hover:-translate-y-1" style={`animation-delay: ${1.2 + index * 0.1}s`}>
-            <div class="p-4 sm:p-6 text-center">
-              <div class="text-2xl sm:text-3xl md:text-4xl font-thin text-white mb-1 sm:mb-2 group-hover:text-blue-400 transition-colors duration-300">
+          <div class="bg-neutral-900/50 border border-neutral-800/70 backdrop-blur-sm rounded-lg sm:rounded-xl shadow-lg hover:border-blue-500/30 hover:bg-neutral-800/60 transition-all duration-300 group hover:scale-105 hover:-translate-y-1" style={`animation-delay: ${1.2 + index * 0.1}s`}>
+            <div class="p-3 sm:p-4 md:p-6 text-center">
+              <div class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-thin text-white mb-1 sm:mb-2 group-hover:text-blue-400 transition-colors duration-300">
                 {stat.number}
               </div>
-              <div class="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-light">
+              <div class="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-light leading-tight">
                 {stat.label}
               </div>
             </div>
@@ -83,10 +87,20 @@ const stats = [
 </section>
 
 <style>
+  /* Mobile-first breakpoint for extra small screens */
+  @media (min-width: 475px) {
+    .xs\:inline {
+      display: inline;
+    }
+    .xs\:hidden {
+      display: none;
+    }
+  }
+
   @keyframes fadeInUp {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(20px);
     }
     to {
       opacity: 1;
@@ -95,38 +109,52 @@ const stats = [
   }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+      transform: translateY(-15px) rotate(180deg); 
+    }
   }
 
   @keyframes float-delayed {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-30px) rotate(-180deg); }
-  }
-
-  @keyframes spin-slow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  @keyframes bounce-slow {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+      transform: translateY(-20px) rotate(-180deg); 
+    }
   }
 
   @keyframes pulse-slow {
-    0%, 100% { opacity: 0.15; }
-    50% { opacity: 0.25; }
+    0%, 100% { 
+      opacity: 0.15; 
+      transform: scale(1);
+    }
+    50% { 
+      opacity: 0.25; 
+      transform: scale(1.05);
+    }
   }
 
   @keyframes gradient-x {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    0%, 100% { 
+      background-position: 0% 50%; 
+    }
+    50% { 
+      background-position: 100% 50%; 
+    }
   }
 
   @keyframes twinkle {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.7; transform: scale(1.1); }
+    0%, 100% { 
+      opacity: 1; 
+      transform: scale(1); 
+    }
+    50% { 
+      opacity: 0.7; 
+      transform: scale(1.1); 
+    }
   }
 
   .animate-fade-in-up {
@@ -134,19 +162,11 @@ const stats = [
   }
 
   .animate-float {
-    animation: float 8s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite;
   }
 
   .animate-float-delayed {
-    animation: float-delayed 10s ease-in-out infinite;
-  }
-
-  .animate-spin-slow {
-    animation: spin-slow 20s linear infinite;
-  }
-
-  .animate-bounce-slow {
-    animation: bounce-slow 3s ease-in-out infinite;
+    animation: float-delayed 8s ease-in-out infinite;
   }
 
   .animate-pulse-slow {
@@ -162,10 +182,7 @@ const stats = [
     animation: twinkle 2s ease-in-out infinite;
   }
 
-  .bg-gradient-radial {
-    background: radial-gradient(circle at center, var(--tw-gradient-stops));
-  }
-
+  /* Animation delays with mobile-first opacity */
   .animation-delay-200 {
     animation-delay: 0.2s;
     opacity: 0;
@@ -189,5 +206,34 @@ const stats = [
   .animation-delay-1000 {
     animation-delay: 1s;
     opacity: 0;
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 640px) {
+    .animate-float,
+    .animate-float-delayed,
+    .animate-pulse-slow {
+      animation-duration: 4s;
+    }
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in-up,
+    .animate-float,
+    .animate-float-delayed,
+    .animate-pulse-slow,
+    .animate-gradient-x,
+    .animate-twinkle {
+      animation: none;
+    }
+    
+    .animation-delay-200,
+    .animation-delay-400,
+    .animation-delay-600,
+    .animation-delay-800,
+    .animation-delay-1000 {
+      opacity: 1;
+    }
   }
 </style>

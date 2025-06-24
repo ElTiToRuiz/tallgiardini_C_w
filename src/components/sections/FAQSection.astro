@@ -34,19 +34,17 @@ const faqs = [
 ];
 ---
 
-<section id="faq" class="relative overflow-hidden py-16 md:py-24">
+<section id="faq" class="relative overflow-hidden w-full">
 
     <!-- Background Effects -->
   <div class="absolute inset-0 pointer-events-none">
     <!-- Animated Gradient Orbs - Tema Azul/Índigo -->
     <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-indigo-500/25 rounded-full blur-3xl animate-float"></div>
     <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-blue-500/20 rounded-full blur-3xl animate-float-delayed"></div>
-    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
-    
-    
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse-slow"></div>  
   </div>
 
-  <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+  <div class="w-full md:max-w-2xl lg:max-w-6xl mx-auto px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-32 z-[1] relative">
     <!-- Header -->
     <div class="text-center mb-12 md:mb-16">
       <Badge 
@@ -71,11 +69,11 @@ const faqs = [
 
     <!-- FAQ Accordion -->
     <div class="max-w-3xl mx-auto">
-      <div class="space-y-4">
-        {faqs.map((faq, index) => (
+      <div class="space-y-2">
+        {faqs.map((faq) => (
           <div class="border-b border-neutral-800/70 last:border-b-0 transition-all duration-300 rounded-lg overflow-hidden hover:bg-neutral-900/20 faq-item">
-            <button class="text-left text-white hover:text-blue-300 px-4 py-4 sm:px-6 sm:py-5 text-sm sm:text-lg font-medium hover:no-underline transition-colors group w-full flex justify-between items-center faq-trigger">
-              <span class="group-hover:text-blue-400 transition-colors font-light">{faq.question}</span>
+            <button class="text-left text-white hover:text-blue-300 px-4 py-4 sm:px-6 sm:py-6 text-sm sm:text-lg font-medium hover:no-underline transition-colors group w-full flex justify-between items-center faq-trigger">
+              <span class="group-hover:text-blue-400 transition-colors font-light leading-tight mr-4">{faq.question}</span>
               <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-400 transition-all duration-300 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>

@@ -36,9 +36,12 @@ const finalClasses = `${baseClasses} ${variantClass} ${glowClass} ${className}`.
 ---
 
 <div class={finalClasses}>
-  <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-    <path d={icon}></path>
-  </svg>
+  {
+   icon && 
+    <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+      <path d={icon}></path>
+    </svg>
+  }
   <span class="whitespace-nowrap">
     <slot />
   </span>
